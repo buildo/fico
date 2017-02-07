@@ -29,3 +29,16 @@ object Knobbo extends FunSuite with App {
 
   assertThrows[knobs.KeyError](fico.run)
 }
+
+//Cool library
+object Puro extends FunSuite with App {
+  import com.typesafe.config.ConfigException
+  import pureconfig.loadConfig
+
+  case class Http(host: String, port: Int)
+  case class Fico(fico: String)
+
+  assert(loadConfig[Http]("service.http").get.host == "0.0.0.0")
+  assert(loadConfig[Http]("service.http").get.port == 8080)
+  assertThrows[ConfigException](loadConfig[Fico]("service.fico"))
+}
