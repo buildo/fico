@@ -1,11 +1,13 @@
 val typesafeConf = "com.typesafe" % "config" % "1.3.1"
 val ficus = "com.iheart" %% "ficus" % "1.4.0"
 val test = "org.scalatest" %% "scalatest" % "3.0.1"
+val knobs = "io.verizon.knobs" %% "typesafe" % "3.12.28a"
 
 val dependencies = Seq(
   ficus,
   typesafeConf,
-  test
+  test,
+  knobs
 )
 
 lazy val fico = (project in file(".")).
