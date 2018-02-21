@@ -1,7 +1,5 @@
 import org.scalatest._
 
-//Standard scala library for making typesafe-config nice
-//Same behavior as typesafe-config
 object Fico extends FunSuite with App {
   import com.typesafe.config._
   import net.ceedubs.ficus.Ficus._
